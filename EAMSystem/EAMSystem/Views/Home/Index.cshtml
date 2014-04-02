@@ -1,0 +1,18 @@
+﻿@{
+    ViewBag.Title = "主页";
+}
+
+<div id="main-shell" class="center" style="width:900px;">
+    <div style="height:40px;"></div>
+
+    <div id="float-left-pic" style="width:450px; float:left">
+        <img src="~/Content/img/home-logo.jpg" width="450" height="300"/>
+    </div>
+
+    <div id="login-module" style="width:350px; padding-left:100px; float:left">
+        <p>上海海事大学教务管理系统</p>
+        @{Html.RenderPartial("_LoginModule");}
+    </div>
+</div>
+
+<div style="height:80px; clear:both"></div>

@@ -1,0 +1,23 @@
+﻿@{var width = (int)ViewData["width"] - 18;
+var height = ViewData["height"];
+var buttonHeight = (int)height / 10;
+var loginbtnWidth = (int)width / 4;
+}
+
+@using (Html.BeginForm("Login", "Account"))
+{
+    <div id="holder-user" class="holder">
+        <input type="text" id="txtUser" onkeyup="fun('txtUser','tbholder-user')" class="login-txt" name="username" style="width:@{@width}px; height:@{@buttonHeight}px;" />
+        <div id="tbholder-user" onclick="document.getElementById('txtUser').focus();" class="tbholder" aria-hidden="true">UserName/EmailAddress</div>
+    </div>
+    <div id="holder-password" class="holder">
+        <input type="password" id="txtPassword" onkeyup="fun('txtPassword','tbholder-pass')" class="login-txt" name="password" style="width:@{@width}px; height:@{@buttonHeight}px;" />
+        <div id="tbholder-pass" onclick="document.getElementById('txtPassword').focus();" class="tbholder">Password</div>
+    </div>
+    <p style="font-size:12px;">
+        <a href="/Home/Index">忘记密码?</a>
+    </p>
+    @Html.ValidationMessage("login")
+
+    <input type="submit" class="btn" style="background-color: #5800ff; width:@{@loginbtnWidth}px; height:@{@buttonHeight}px;" value="登录" />
+}

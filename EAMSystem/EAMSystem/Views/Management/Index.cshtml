@@ -1,0 +1,62 @@
+﻿@{
+    ViewBag.Location = "首页";
+    Layout = "~/Views/Management/_ManagementMaster.cshtml";
+}
+
+<div>
+    @if (User.IsInRole("Admin"))
+    {
+        <a class="sparkle-module" style="background-color:#eeeeee;width:150px;height:150px;" href="/Management/EditStudent">
+            <div style="margin:40px 20px;">
+                编辑学生信息
+            </div>
+
+        </a>
+        <a class="sparkle-module" style="background-color:#eeeeee;width:150px;height:150px;">
+            <div style="margin:40px 20px;">
+                编辑教师信息
+            </div>
+        </a>
+        <a class="sparkle-module" style="background-color:#eeeeee;width:150px;height:150px;">
+            <div style="margin:40px 20px;">
+                编辑课程信息
+            </div>
+        </a>
+        <a class="sparkle-module" style="background-color:#eeeeee;width:150px;height:150px;">
+            <div style="margin:40px 20px;">
+                编辑教学任务
+            </div>
+        </a>
+    }
+    else if (User.IsInRole("Teacher"))
+    {
+        <a class="sparkle-module" style="background-color:#eeeeee;width:150px;height:150px;">
+            <div style="margin:40px 20px;">
+                查看教学任务
+            </div>
+        </a>
+        <a class="sparkle-module" style="background-color:#eeeeee;width:150px;height:150px;">
+            <div style="margin:40px 20px;">
+                成绩录入
+            </div>
+        </a>
+    }
+    else if (User.IsInRole("Student"))
+    {
+        <a class="sparkle-module" style="background-color:#eeeeee;width:150px;height:150px;">
+            <div style="margin:40px 20px;">
+                查看课表
+            </div>
+        </a>
+        <a class="sparkle-module" style="background-color:#eeeeee;width:150px;height:150px;">
+            <div style="margin:40px 20px;">
+                选课
+            </div>
+        </a>
+        <a class="sparkle-module" style="background-color:#eeeeee;width:150px;height:150px;">
+            <div style="margin:40px 20px;">
+                查看成绩
+            </div>
+        </a>
+    }
+</div>

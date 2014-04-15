@@ -1,0 +1,39 @@
+﻿@{
+    ViewBag.Location = "编辑学生信息";
+    Layout = "~/Views/Management/_ManagementMaster.cshtml";
+}
+
+@using EAMSystem.Models
+@model IList<Student>
+
+<a href="/Management/NewStudent">添加学生</a>
+
+<div id="main-shell">
+    <div id="class-list" class="edit-stu-module">
+        <div style="margin:20px; width:236px; height:360px;">
+            <div id="list" style="height:330px;">
+
+            </div>
+            <div id="pager" style="height:30px;">
+
+            </div>
+        </div>
+    </div>
+    <div id="member-list" class="edit-stu-module">
+        <div id="member-list-detail" style="margin:20px; width:236px; height:360px;">
+            <div id="list" style="height:330px;">
+
+            </div>
+            <div id="pager" style="height:30px;">
+
+            </div>
+        </div>
+    </div>
+    <div id="stu-info" class="edit-stu-module">
+        <div style="margin:20px; width:236px; height:360px;">
+            <div id="stu-info-detail">
+
+            </div>
+        </div>
+    </div>
+</div>

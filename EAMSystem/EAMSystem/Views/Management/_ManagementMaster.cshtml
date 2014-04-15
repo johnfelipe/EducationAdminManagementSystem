@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>教务管理系统</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr", "~/bundles/js")
+</head>
+<body>
+    <div id="main-shell" class="center" style="width:900px;">
+        <table cellpadding="0" cellspacing="0" style="width:100%">
+            <tr style="background-color:#d0d0d0; height:40px; font-size:12px;">
+                <td width="100" align="center">教务管理系统</td>
+                <td width="300" align="center">@DateTime.Today.ToString("yyyy年MM月dd日")</td>
+                <td width="300" align="center">@(User.Identity.Name + (User.IsInRole("Student") ? "（学生）" : User.IsInRole("Teacher") ? "（教师）" : "（管理员）") + "，你好！")</td>
+                <td width="200" align="right" style="padding-right:20px;">@Html.ActionLink("注销", "LogOff", "Account")</td>
+            </tr>
+        </table>
+
+        <p style="font-size:14px">现在的位置 - @ViewBag.Location</p>
+
+        @RenderBody()
+
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/common")
+
+        <div style="height:20px; clear:both"></div>
+
+        <div id="footer-shell" style="width:100%">
+            <div id="footer" class="center footer" style="width:900px; ">
+                <table id="footer-table" style="line-height:50px; width:100%">
+                    <tr>
+                        <td id="footer-copy" align="left">&copy;@DateTime.Now.Year - EAMSytem</td>
+                        <td id="footer-about" align="right">
+                            教务管理系统由XXX提供技术支持
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

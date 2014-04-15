@@ -17,7 +17,7 @@ var loginbtnWidth = (int)width / 4;
     <p style="font-size:12px;">
         <a href="/Home/Index">忘记密码?</a>
     </p>
-    @Html.ValidationMessage("login")
-
+    
+    <span class="field-validation-error" style="display:block" id="message">@TempData["message"]</span>
     <input type="submit" class="btn" style="background-color: #5800ff; width:@{@loginbtnWidth}px; height:@{@buttonHeight}px;" value="登录" />
 }

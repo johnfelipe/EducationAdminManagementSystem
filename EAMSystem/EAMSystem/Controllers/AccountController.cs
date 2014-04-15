@@ -33,10 +33,13 @@ namespace EAMSystem.Controllers
             {
                 Membership.GetUser(username).LastLoginDate = DateTime.UtcNow;
                 FormsAuthentication.SetAuthCookie(username, false);
+                return RedirectToAction("Index", "Management");
             }
-            else ModelState.AddModelError("login", "The username and the password do not match");
-
-            return RedirectToAction("Index", "Home");
+            else
+            {
+                TempData["message"] = "账号与密码不匹配";
+                return RedirectToAction("Index", "Home");
+            }
         }
 
         //

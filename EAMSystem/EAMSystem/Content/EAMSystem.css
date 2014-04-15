@@ -135,28 +135,21 @@ td input[type="password"] {
     font-size: 12px;
 }
 
-DIV.ProgressBar {
-    width: 100px;
-    padding: 0;
-    border: 1px solid black;
-    margin-right: 1em;
-    height: .75em;
-    margin-left: 1em;
-    display: -moz-inline-stack;
-    display: inline-block;
-    zoom: 1;
-    *display: inline;
+.sparkle-module{
+    display:block;
+    text-decoration:none;
+    color:black;
+    border-radius:20px;
+    float:left;
+    margin:10px;
+    text-align:center;
 }
 
-    DIV.ProgressBar DIV {
-        background-color: Green;
-        font-size: 1pt;
-        height: 100%;
-        float: left;
-    }
-
-SPAN.asyncUploader OBJECT {
-    position: relative;
-    top: 5px;
-    left: 10px;
+.edit-stu-module{
+    float:left;
+    border-radius:20px;
+    margin:10px;
+    border:2px solid gray;
+    width:276px;
+    height:400px;
 }

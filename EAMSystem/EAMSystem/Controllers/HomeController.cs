@@ -14,17 +14,20 @@ namespace EAMSystem.Controllers
 
         public ActionResult Index()
         {
-            //Roles.CreateRole("Student");
-            //Roles.CreateRole("Teacher");
-            //Roles.CreateRole("Admin");
+            if(Request.IsAuthenticated)
+            {
+                return RedirectToAction("Index", "Management");
+            }
+            else 
+            {
+                ViewData["width"] = 325;
+                ViewData["height"] = 300;
 
-            //Membership.CreateUser("admin", "123456");
-
-            ViewData["width"] = 325;
-            ViewData["height"] = 300;
-
-            return View();
+                return View();
+            }
         }
+
+
 
     }
 }

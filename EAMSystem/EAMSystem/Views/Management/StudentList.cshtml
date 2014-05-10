@@ -1,0 +1,34 @@
+﻿@{
+    ViewBag.Location = "学生信息";
+    Layout = "~/Views/Management/_ManagementMaster.cshtml";
+}
+
+@using EAMSystem.Models
+@model Student[]
+
+<a href="/Management/EditStudent">添加学生</a>
+
+<div id="main-shell">
+    <div id="class-list">
+        <table cellpadding="0" cellspacing="0" style="width:100%">
+            <tr>
+                <td>学号</td>
+                <td>姓名</td>
+                <td>专业</td>
+                <td>班级</td>
+                <td></td>
+            </tr>
+            @foreach (Student stu in Model)
+            {
+                <tr>
+                    <td>@stu.StuNo</td>
+                    <td>@stu.Name</td>
+                    <td>@stu.Major</td>
+                    <td>@stu.Class</td>
+                    <td>@Html.ActionLink("编辑", "EditStudent", new { id = stu.Id })</td>
+                </tr>
+            }
+        </table>
+    </div>
+</div>
+

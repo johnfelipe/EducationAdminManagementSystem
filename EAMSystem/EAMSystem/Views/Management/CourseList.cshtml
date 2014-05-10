@@ -1,0 +1,34 @@
+﻿@{
+    ViewBag.Location = "课程信息";
+    Layout = "~/Views/Management/_ManagementMaster.cshtml";
+}
+
+@using EAMSystem.Models
+@model Course[]
+
+<a href="/Management/EditCourse">添加课程</a>
+
+<div id="main-shell">
+    <div id="class-list">
+        <table cellpadding="0" cellspacing="0" style="width:100%">
+            <tr>
+                <td>课程号</td>
+                <td>课程名</td>
+                <td>学分</td>
+                <td>学时</td>
+                <td></td>
+            </tr>
+            @foreach (Course cou in Model)
+            {
+                <tr>
+                    <td>@cou.CourseNo</td>
+                    <td>@cou.Name</td>
+                    <td>@cou.Credit</td>
+                    <td>@cou.Period</td>
+                    <td>@Html.ActionLink("编辑", "EditCourse", new { id = cou.Id })</td>
+                </tr>
+            }
+        </table>
+    </div>
+</div>
+

@@ -239,6 +239,11 @@
     <Content Include="Views\Management\Index.cshtml" />
     <Content Include="Views\Management\_ManagementMaster.cshtml" />
     <Content Include="Views\Management\EditStudent.cshtml" />
+    <Content Include="Views\Management\StudentList.cshtml" />
+    <Content Include="Views\Management\TeacherList.cshtml" />
+    <Content Include="Views\Management\EditTeacher.cshtml" />
+    <Content Include="Views\Management\CourseList.cshtml" />
+    <Content Include="Views\Management\EditCourse.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

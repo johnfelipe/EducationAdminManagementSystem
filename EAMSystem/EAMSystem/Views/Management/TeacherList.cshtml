@@ -1,0 +1,32 @@
+﻿@{
+    ViewBag.Location = "教师信息";
+    Layout = "~/Views/Management/_ManagementMaster.cshtml";
+}
+
+@using EAMSystem.Models
+@model Teacher[]
+
+<a href="/Management/EditTeacher">添加教师</a>
+
+<div id="main-shell">
+    <div id="class-list">
+        <table cellpadding="0" cellspacing="0" style="width:100%">
+            <tr>
+                <td>教工号</td>
+                <td>姓名</td>
+                <td>学院</td>
+                <td></td>
+            </tr>
+            @foreach (Teacher tea in Model)
+            {
+                <tr>
+                    <td>@tea.TeaNo</td>
+                    <td>@tea.Name</td>
+                    <td>@tea.Institution</td>
+                    <td>@Html.ActionLink("编辑", "EditTeacher", new { id = tea.Id })</td>
+                </tr>
+            }
+        </table>
+    </div>
+</div>
+

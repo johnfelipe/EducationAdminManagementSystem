@@ -1,42 +1,42 @@
 ﻿@{
-    ViewBag.Location = "编辑学生信息";
+    ViewBag.Location = "编辑课程信息";
     Layout = "~/Views/Management/_ManagementMaster.cshtml";
 }
 
 @using EAMSystem.Models
 
-@model Student
+@model Course
 
 <a href="/Management/StudentList">返回</a>
 
-@using (Html.BeginForm(new { controller = "Management", action = "EditStudent" }))
+@using (Html.BeginForm(new { controller = "Management", action = "EditCourse" }))
 {
     Html.Hidden("id", Model != null ? Model.Id.ToString() : string.Empty);
-    
+
     <table>
         <tr>
-            <td>@Html.Label("学号")</td>
+            <td>@Html.Label("课程号")</td>
         </tr>
         <tr>
-            <td>@Html.TextBox("stuno", Model != null ? Model.StuNo : string.Empty)</td>
+            <td>@Html.TextBox("courseno", Model != null ? Model.CourseNo : string.Empty)</td>
         </tr>
         <tr>
-            <td>@Html.Label("姓名")</td>
+            <td>@Html.Label("课程名")</td>
         </tr>
         <tr>
             <td>@Html.TextBox("name", Model != null ? Model.Name : string.Empty)</td>
         </tr>
         <tr>
-            <td>@Html.Label("专业")</td>
+            <td>@Html.Label("学分")</td>
         </tr>
         <tr>
-            <td>@Html.TextBox("major", Model != null ? Model.Major : string.Empty)</td>
+            <td>@Html.TextBox("credit", Model != null ? Model.Credit.ToString() : string.Empty)</td>
         </tr>
         <tr>
-            <td>@Html.Label("班级")</td>
+            <td>@Html.Label("学时")</td>
         </tr>
         <tr>
-            <td>@Html.TextBox("className", Model != null ? Model.Class : string.Empty)</td>
+            <td>@Html.TextBox("period", Model != null ? Model.Period.ToString() : string.Empty)</td>
         </tr>
         <tr>
             <td><input type="submit" value="提交" /></td>
